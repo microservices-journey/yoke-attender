@@ -19,12 +19,11 @@ public class NotifierDao {
 
   public AttenderEventResponse addAttender(AttenderEventBody event) {
     ResponseEntity<AttenderEventResponse> response = restTemplate
-        .postForEntity(notifierUrl + event.getEventId() + "/attender/", event.getEmail(),
-            AttenderEventResponse.class);
+        .postForEntity(notifierUrl + "/attender/", event, AttenderEventResponse.class);
     return response.getBody();
   }
 
   public void deleteAttender(String eventId, String email) {
-    restTemplate.delete(notifierUrl + eventId + "/attender/", email);
+    restTemplate.delete(notifierUrl + "/" + eventId + "/attender/" + email);
   }
 }

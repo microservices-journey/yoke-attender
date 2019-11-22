@@ -25,13 +25,13 @@ public class AttenderController {
   @Autowired
   private NotifyService notifyService;
 
-  @PostMapping(value = "/event/")
+  @PostMapping(value = "/event")
   public AttenderEventResponse create(@RequestBody AttenderEventBody event) {
     return notifyService.add(event);
   }
 
-  @DeleteMapping(value = "/event/")
-  public void create(@PathVariable String eventId, @PathVariable String userId) {
+  @DeleteMapping(value = "/event/{eventId}/{userId}")
+  public void delete(@PathVariable String eventId, @PathVariable String userId) {
     User user = attenderService.findUserById(Long.valueOf(userId));
     notifyService.delete(eventId, user.getEmail());
   }

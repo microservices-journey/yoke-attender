@@ -2,6 +2,7 @@ package com.epam.yoke.attender.model.rq;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.List;
 import javax.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,10 +17,10 @@ import lombok.ToString;
 public class AttenderEventBody {
 
   @NotNull(message = "EventId is mandatory")
-  @ApiModelProperty(required = true, value = "Requested capacity")
+  @ApiModelProperty(required = true, value = "Requested eventId")
   private String eventId;
 
-  @NotNull(message = "Email is mandatory")
-  @ApiModelProperty(required = true, value = "Requested locationId")
-  private String email;
+  @NotNull(message = "Emails is mandatory")
+  @ApiModelProperty(required = true, value = "Requested emails")
+  private List<String> emails;
 }
