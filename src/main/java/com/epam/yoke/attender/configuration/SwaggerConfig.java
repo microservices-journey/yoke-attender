@@ -28,7 +28,7 @@ public class SwaggerConfig {
   private ApiInfo apiInfo() {
     return new ApiInfo(
         "Event Attender Micro Service",
-        "Event API.",
+        "Event Attender API.",
         "1.0",
         "Terms of service",
         new Contact("Epam Inc.", "www.epam.by", "support@epam.com"),
