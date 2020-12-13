@@ -1,7 +1,6 @@
 package com.epam.yoke.attender.model.rs;
 
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -11,15 +10,15 @@ import lombok.ToString;
 @Setter
 @NoArgsConstructor
 @ToString
-@ApiModel(description = "Attender response")
+@Schema(description = "Attender response")
 public class AttenderResponse {
 
-  @ApiModelProperty("Requested name")
-  private String name;
+    @Schema(description = "Requested name")
+    private String name;
 
-  @ApiModelProperty("Requested email")
-  private String email;
+    @Schema(description = "Requested email")
+    private String email;
 
-  @ApiModelProperty("Requested id")
-  private String id;
+    @Schema(description = "Requested id")
+    private String id;
 }
