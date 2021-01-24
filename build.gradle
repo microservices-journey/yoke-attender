@@ -26,6 +26,11 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
     implementation 'org.springframework.cloud:spring-cloud-config-client'
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
+    implementation 'org.springframework.retry:spring-retry'
+    implementation 'org.springframework.cloud:spring-cloud-stream'
+    implementation 'org.springframework.cloud:spring-cloud-stream-binder-kafka'
+    implementation 'org.springframework.retry:spring-retry'
     implementation 'org.postgresql:postgresql'
     implementation group: 'org.mapstruct', name: 'mapstruct', version: "${project.property("mapstruct.version")}"
 
@@ -34,10 +39,12 @@ dependencies {
     annotationProcessor group: 'org.mapstruct', name: 'mapstruct-processor', version: "${project.property("mapstruct.version")}"
 
     implementation 'org.springdoc:springdoc-openapi-ui:1.5.0'
+    implementation group: 'net.logstash.logback', name: 'logstash-logback-encoder', version: "${project.property("logstash.version")}"
+    implementation 'org.springframework.cloud:spring-cloud-starter-sleuth'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 bootJar {
-    mainClassName = 'com.epam.yoke.notify.YokeNotifyApplication'
+    mainClassName = 'com.epam.yoke.attender.AttenderApplication'
 }
